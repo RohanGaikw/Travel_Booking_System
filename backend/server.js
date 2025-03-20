@@ -117,6 +117,11 @@ async function startServer() {
   await server.start();
   server.applyMiddleware({ app });
 
+  app.get("/", (req, res) => {
+  res.send("Server is running successfully!");
+});
+
+
   app.listen(4000, () => {
     console.log(`🚀 Server running at http://localhost:4000${server.graphqlPath}`);
   });
